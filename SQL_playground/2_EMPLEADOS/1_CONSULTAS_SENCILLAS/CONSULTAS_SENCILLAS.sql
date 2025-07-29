@@ -29,3 +29,18 @@ select id ,substr(nif,1,8),substr(nif,9,9) from empleado
 -- Para calcular este dato tendrá que restar al valor del presupuesto inicial (columna presupuesto) los gastos que se han generado (columna gastos).
 -- Tenga en cuenta que en algunos casos pueden existir valores negativos. Utilice un alias apropiado para la nueva columna columna que está calculando.
 select nombre,(presupuesto-gastos )as Presupuesto_Actual from departamento 
+
+-- 12_Lista el nombre de los departamentos y el valor del presupuesto actual ordenado de forma ascendente.
+select nombre,(presupuesto-gastos )as Presupuesto_Actual from departamento 
+order by Presupuesto_Actual
+
+-- 13_Lista el nombre de todos los departamentos ordenados de forma ascendente.
+select nombre from departamento 
+order by nombre asc
+
+-- 14_Lista el nombre de todos los departamentos ordenados de forma descendente.
+
+-- 15_Lista los apellidos y el nombre de todos los empleados, ordenados de forma alfabética tendiendo en 
+-- cuenta en primer lugar sus apellidos y luego su nombre.
+select apellido1,apellido2,nombre from empleado
+order by apellido1 ,apellido2,nombre
