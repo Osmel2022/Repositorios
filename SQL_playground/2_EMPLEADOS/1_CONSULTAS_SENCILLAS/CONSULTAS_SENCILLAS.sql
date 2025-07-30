@@ -44,3 +44,15 @@ order by nombre asc
 -- cuenta en primer lugar sus apellidos y luego su nombre.
 select apellido1,apellido2,nombre from empleado
 order by apellido1 ,apellido2,nombre
+
+-- 16_Devuelve una lista con el nombre y el presupuesto, de los 3 departamentos que tienen mayor presupuesto.
+select nombre,presupuesto from departamento
+    order by presupuesto desc
+    limit 3
+
+-- 17_Devuelve una lista con el nombre y el presupuesto, de los 3 departamentos que tienen menor presupuesto.
+
+-- 18_Devuelve una lista con el nombre y el gasto, de los 2 departamentos que tienen mayor gasto.
+select nombre,gastos from departamento
+order by gastos  desc
+limit 2
