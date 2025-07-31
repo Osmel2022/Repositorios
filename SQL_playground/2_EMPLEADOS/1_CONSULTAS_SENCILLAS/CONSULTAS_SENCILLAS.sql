@@ -56,3 +56,47 @@ select nombre,presupuesto from departamento
 select nombre,gastos from departamento
 order by gastos  desc
 limit 2
+
+-- 19_Devuelve una lista con el nombre y el gasto, de los 2 departamentos que tienen menor gasto.
+select nombre,gastos from departamento
+    order by gastos 
+    limit 2
+
+-- 20_Devuelve una lista con 5 filas a partir de la tercera fila de la tabla empleado. 
+--La tercera fila se debe incluir en la respuesta. La respuesta debe incluir todas las columnas de la tabla empleado.
+select * from empleado
+    limit 5
+    offset 2
+
+-- 21_Devuelve una lista con el nombre de los departamentos y el presupuesto,
+-- de aquellos que tienen un presupuesto mayor o igual a 150000 euros.
+select nombre,presupuesto from departamento
+    where presupuesto >= 150000
+
+-- 22_Devuelve una lista con el nombre de los departamentos y el gasto, 
+--de aquellos que tienen menos de 5000 euros de gastos.
+select nombre,gastos from departamento
+    where gastos < 5000
+
+-- 23_Devuelve una lista con el nombre de los departamentos y el presupuesto, 
+--de aquellos que tienen un presupuesto entre 100000 y 200000 euros. Sin utilizar el operador BETWEEN.
+select nombre,presupuesto from departamento
+    where presupuesto >= 100000 and presupuesto <= 200000
+
+-- 24_Devuelve una lista con el nombre de los departamentos que no tienen un presupuesto entre 100000 y 200000 euros.
+-- Sin utilizar el operador BETWEEN.
+select nombre,presupuesto from departamento
+    where presupuesto<100000 or presupuesto>200000
+    
+select nombre from departamento
+    where not (presupuesto >= 100000 and presupuesto <= 200000)
+
+-- 25_
+
+-- 26_
+
+-- 27_
+
+-- 28_
+
+-- 29_
