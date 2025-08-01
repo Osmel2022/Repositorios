@@ -91,12 +91,31 @@ select nombre,presupuesto from departamento
 select nombre from departamento
     where not (presupuesto >= 100000 and presupuesto <= 200000)
 
--- 25_
+-- 25_Devuelve una lista con el nombre de los departamentos que tienen un presupuesto entre 100000 y 200000 euros.
+--Utilizando el operador BETWEEN.
+select nombre,presupuesto from departamento
+    where presupuesto between 100000 and 200000
 
--- 26_
+-- 26_Devuelve una lista con el nombre de los departamentos que no tienen un presupuesto entre 100000 y 200000 euros.
+-- Utilizando el operador BETWEEN.
+select nombre,presupuesto from departamento
+    where not (presupuesto between 100000 and 200000)
 
--- 27_
+-- 27_Devuelve una lista con el nombre de los departamentos, gastos y presupuesto,
+-- de aquellos departamentos donde los gastos sean MAYORES que el presupuesto del que disponen.
+select nombre,gastos,presupuesto from departamento
+    where gastos > presupuesto
 
--- 28_
+-- 28_Devuelve una lista con el nombre de los departamentos, gastos y presupuesto,
+-- de aquellos departamentos donde los gastos sean MENORES que el presupuesto del que disponen.
+select nombre,gastos,presupuesto from departamento
+    where gastos < presupuesto
 
--- 29_
+-- 29_Devuelve una lista con el nombre de los departamentos, gastos y presupuesto, 
+-- de aquellos departamentos donde los gastos sean IGUALES al presupuesto del que disponen.
+select nombre,gastos,presupuesto from departamento
+    where gastos = presupuesto
+
+-- 30_Lista todos los datos de los empleados cuyo segundo apellido sea NULL.
+select * from empleado
+    where apellido2 is null
