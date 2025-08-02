@@ -119,3 +119,27 @@ select nombre,gastos,presupuesto from departamento
 -- 30_Lista todos los datos de los empleados cuyo segundo apellido sea NULL.
 select * from empleado
     where apellido2 is null
+
+-- 31_Lista todos los datos de los empleados cuyo segundo apellido no sea NULL.
+select * from empleado
+    where apellido2 is not null
+
+-- 32_Lista todos los datos de los empleados cuyo segundo apellido sea López.
+select * from empleado
+    where apellido2 = 'López'
+
+-- 33_Lista todos los datos de los empleados cuyo segundo apellido sea Díaz o Moreno. Sin utilizar el operador IN.
+select * from empleado
+    where apellido2 = 'Díaz' or apellido2 = 'Moreno'
+
+-- 34_Lista todos los datos de los empleados cuyo segundo apellido sea Díaz o Moreno. Utilizando el operador IN.
+select * from empleado
+    where apellido2 in ('Díaz','Moreno')
+
+-- 35_Lista los nombres, apellidos y nif de los empleados que trabajan en el departamento 3.
+select nombre,apellido1,apellido2,nif from empleado
+    where id_departamento = 3   
+
+-- 36_Lista los nombres, apellidos y nif de los empleados que trabajan en los departamentos 2, 4 o 5.
+select nombre,apellido1,apellido2,nif from empleado
+    where id_departamento in (2,4,5)
