@@ -25,3 +25,24 @@ select distinct e.id_departamento,d.nombre from empleado e
     -- el valor de los gastos que ha generado (columna gastos).
 select d.id, d.nombre, (d.presupuesto - d.gastos) as presupuesto_actual from departamento d
     where exists (select 1 from empleado e where e.id_departamento = d.id)
+
+-- 5_Devuelve el nombre del departamento donde trabaja el empleado que tiene el nif 38382980M.
+select d.nombre,e.* from empleado e
+    join departamento d
+    on e.id_departamento = d.id
+    where e.nif = '38382980M'
+
+select d.nombre,e.* from departamento d
+    join empleado e 
+    where d.id = e.id_departamento and e.nif = '38382980M'
+
+-- 6_Devuelve el nombre del departamento donde trabaja el empleado Pepe Ruiz Santana.
+select d.nombre,e.* from empleado e
+    join departamento d
+    on e.id_departamento = d.id
+    where concat_ws(' ',e.nombre,e.apellido1,e.apellido2) = 'Pepe Ruiz Santana'
+
+select d.nombre,e.* from departamento d 
+    join empleado e 
+    on d.id = e.id_departamento
+    where e.nombre ='Pepe' and e.apellido1='Ruiz' and e.apellido2 ='Santana'
