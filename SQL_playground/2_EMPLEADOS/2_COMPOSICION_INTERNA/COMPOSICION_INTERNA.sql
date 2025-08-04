@@ -46,3 +46,43 @@ select d.nombre,e.* from departamento d
     join empleado e 
     on d.id = e.id_departamento
     where e.nombre ='Pepe' and e.apellido1='Ruiz' and e.apellido2 ='Santana'
+
+-- 7_Devuelve un listado con los datos de los empleados que trabajan en el departamento de I+D. Ordena el resultado alfabéticamente.
+select e.* from empleado e
+    join departamento d
+    on e.id_departamento = d.id
+    where d.nombre = 'I+D'
+    order by e.apellido1, e.apellido2, e.nombre
+
+select * from empleado e
+    join departamento d 
+    on e.id_departamento = d.id
+    where d.nombre = 'I+D'
+    order by e.nombre
+
+-- 8_Devuelve un listado con los datos de los empleados que trabajan en el departamento de Sistemas, 
+-- Contabilidad o I+D. Ordena el resultado alfabéticamente.
+select * from departamento d 
+    join empleado e     
+    where  d.id = e.id_departamento
+    and d.nombre in ('Sistemas','Contabilidad','I+D')
+    order by d.nombre
+
+-- 9_Devuelve una lista con el nombre de los empleados que tienen los departamentos 
+--que no tienen un presupuesto entre 100000 y 200000 euros.
+select e.nombre from empleado e
+    join departamento d
+    on e.id_departamento = d.id
+    where not (d.presupuesto between 100000 and 200000)
+
+select * from  departamento d
+    join  empleado e     
+    on  d.id = e.id_departamento
+    where d.presupuesto >200000 or d.presupuesto<100000
+
+-- 10_Devuelve un listado con el nombre de los departamentos donde existe algún empleado cuyo segundo apellido sea NULL.
+-- Tenga en cuenta que no debe mostrar nombres de departamentos que estén repetidos.
+select distinct d.nombre from departamento d
+    join empleado e
+    on e.id_departamento = d.id
+    where e.apellido2 is null
