@@ -80,3 +80,20 @@ select * from departamento d
     join  empleado e
     on e.id_departamento = d.id 
     where d.nombre in ('Sistemas','Contabilidad','I+D')
+
+-- 9_ Devuelve una lista con el nombre de los empleados que tienen los departamentos
+    -- que no tienen un presupuesto entre 100000 y 200000 euros.
+
+-- MY_QUERY
+select e.nombre from empleado e
+    join departamento d 
+    on e.id_departamento = d.id
+    where d.presupuesto not between 100000 and 200000
+
+-- 10_ Devuelve un listado con el nombre de los departamentos donde existe algún empleado cuyo segundo apellido sea NULL. 
+    --Tenga en cuenta que no debe mostrar nombres de departamentos que estén repetidos.
+    
+-- MY_QUERY
+select distinct d.nombre from departamento d
+    join empleado e on e.id_departamento = d.id
+    where e.apellido2 is null
