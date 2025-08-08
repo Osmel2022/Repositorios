@@ -23,3 +23,11 @@ SELECT MAX(presupuesto) AS maximo_presupuesto
 SELECT nombre, presupuesto
     FROM departamentos
     WHERE presupuesto = (SELECT MAX(presupuesto) FROM departamentos);
+
+-- 7_Calcula el número total de empleados que hay en la tabla empleado.
+SELECT COUNT(*)  FROM empleados;
+
+-- 8_Calcula el número de empleados que no tienen NULL en su segundo apellido.
+select count(*) from    empleado
+    where apellido2 is not null
+
