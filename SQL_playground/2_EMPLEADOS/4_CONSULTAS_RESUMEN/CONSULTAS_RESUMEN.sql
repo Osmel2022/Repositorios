@@ -52,3 +52,11 @@ SELECT d.nombre, COUNT(e.id) AS numero_empleados
     FROM departamentos d
     LEFT JOIN empleados e ON d.id = e.id_departamento
     GROUP BY d.nombre;
+
+-- 12_Calcula el número de empleados que trabajan en cada unos de los departamentos 
+    --que tienen un presupuesto mayor a 200000 euros.
+SELECT d.nombre, COUNT(e.id) AS numero_empleados    
+    FROM departamentos d    
+    LEFT JOIN empleados e ON d.id = e.id_departamento
+    WHERE d.presupuesto > 200000
+    GROUP BY d.nombre;
