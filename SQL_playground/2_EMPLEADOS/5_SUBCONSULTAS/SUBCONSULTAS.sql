@@ -37,3 +37,15 @@ select d.nombre from departamento d
 -- 8_Devuelve los nombres de los departamentos que tienen empleados asociados. (Utilizando IN o NOT IN).
 select nombre from departamento
     where id in (select id_departamento from empleado)
+
+-- 9_Devuelve los nombres de los departamentos que no tienen empleados asociados. (Utilizando IN o NOT IN).
+select nombre from departamento
+    where id not in (select id_departamento from empleado)  
+
+-- 10_Devuelve los nombres de los departamentos que tienen empleados asociados. (Utilizando EXISTS o NOT EXISTS).
+select nombre from departamento d
+    where exists (select 1 from empleado e where e.id_departamento = d.id)
+
+-- 11_Devuelve los nombres de los departamentos que tienen empleados asociados. (Utilizando EXISTS o NOT EXISTS).
+select nombre from departamento d
+    where not exists (select 1 from empleado e where e.id_departamento = d.id)
