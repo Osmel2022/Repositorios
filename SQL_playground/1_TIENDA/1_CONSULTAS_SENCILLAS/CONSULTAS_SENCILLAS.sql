@@ -1,4 +1,4 @@
--- 1_
+-- 1_Lista el nombre de todos los productos que hay en la tabla producto.
 
 -- 2_
 
