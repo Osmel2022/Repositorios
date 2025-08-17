@@ -6,8 +6,8 @@
     -- Este listado también debe incluir los comerciales que no han realizado ningún pedido. 
     -- El listado debe estar ordenado alfabéticamente por el primer apellido, segundo apellido y nombre de los comerciales.
 
--- 3_
+-- 3_Devuelve un listado que solamente muestre los clientes que no han realizado ningún pedido.
 
--- 4_
+-- 4_Devuelve un listado que solamente muestre los comerciales que no han realizado ningún pedido.
 
 -- 5_
