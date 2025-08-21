@@ -18,5 +18,8 @@ select * from cliente c
     where c.id not in (select id_cliente from pedido)
 
 -- 4_Devuelve un listado que solamente muestre los comerciales que no han realizado ningún pedido.
+select * from comercial c
+    left join pedido p on c.id = p.id_comercial
+    where c.id not in (select id_comercial from pedido)
 
 -- 5_
