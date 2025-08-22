@@ -22,4 +22,14 @@ select * from comercial c
     left join pedido p on c.id = p.id_comercial
     where c.id not in (select id_comercial from pedido)
 
--- 5_
+-- 5_Devuelve un listado con los clientes que no han realizado ningún pedido 
+    --y de los comerciales que no han participado en ningún pedido. 
+    --Ordene el listado alfabéticamente por los apellidos y el nombre. 
+    --En en listado deberá diferenciar de algún modo los clientes y los comerciales.
+select apellido1,apellido2,nombre,'Cliente' as tipo from cliente c
+    where c.id not in (select id_cliente from pedido)
+union
+select apellido1,apellido2,nombre,'Comercial' as tipo from comercial c
+    where c.id not in (select id_comercial from pedido)
+    order by apellido1,apellido2,nombre
+    
