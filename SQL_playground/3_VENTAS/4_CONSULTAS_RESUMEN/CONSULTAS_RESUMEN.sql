@@ -13,9 +13,12 @@ select count(id) from cliente
 -- 5_Calcula cuál es la mayor cantidad que aparece en la tabla pedido.
 select max(total) from pedido
 
--- 6_
+-- 6_Calcula cuál es la menor cantidad que aparece en la tabla pedido.
+select min(total) from pedido
 
--- 7_
+-- 7_Calcula cuál es el valor máximo de categoría para cada una de las ciudades que aparece en la tabla cliente.
+select ciudad, max(categoria) from cliente
+    group by ciudad
 
 -- 8_
 
