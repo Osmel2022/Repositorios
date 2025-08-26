@@ -20,6 +20,23 @@ select min(total) from pedido
 select ciudad, max(categoria) from cliente
     group by ciudad
 
--- 8_
+-- 8_Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno de los clientes.
+    -- Es decir, el mismo cliente puede haber realizado varios pedidos de diferentes cantidades el mismo día.
+    -- Se pide que se calcule cuál es el pedido de máximo valor para cada uno de los días en los que un cliente ha realizado un pedido. 
+    -- Muestra el identificador del cliente, nombre, apellidos, la fecha y el valor de la cantidad.
 
--- 9_
+-- 9_Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno de los clientes,
+    -- teniendo en cuenta que sólo queremos mostrar aquellos pedidos que superen la cantidad de 2000 €.
+
+-- 10_Calcula el máximo valor de los pedidos realizados para cada uno de los comerciales durante la fecha 2016-08-17. 
+    -- Muestra el identificador del comercial, nombre, apellidos y total.
+
+-- 11_
+
+-- 12_
+
+-- 13_
+
+-- 14_
+
+-- 15_
