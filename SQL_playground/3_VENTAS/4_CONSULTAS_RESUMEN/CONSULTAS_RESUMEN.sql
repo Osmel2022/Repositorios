@@ -37,11 +37,15 @@ select c.id, c.nombre, c.apellido1, c.apellido2, p.fecha, max(p.total) as max_to
     where p.total > 2000    
     group by c.id, c.nombre, c.apellido1, c.apellido2, p.fecha
     order by c.id, p.fecha
-    
+
 
 -- 10_Calcula el máximo valor de los pedidos realizados para cada uno de los comerciales durante la fecha 2016-08-17. 
     -- Muestra el identificador del comercial, nombre, apellidos y total.
-
+select c.id, c.nombre,c.apellido1,max(total) from comercial c
+join pedido p on c.id = p.id_comercial
+where fecha = '2016-08-17'
+group by c.id, c.nombre,c.apellido1
+                        
 -- 11_
 
 -- 12_
