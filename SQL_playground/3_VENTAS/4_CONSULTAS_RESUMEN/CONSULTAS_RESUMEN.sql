@@ -52,8 +52,18 @@ select c.id, c.nombre, c.apellido1, c.apellido2, count(p.id) as numero_pedidos f
     left join pedido p on c.id = p.id_cliente   
     group by c.id, c.nombre, c.apellido1, c.apellido2
     order by c.id
-    
--- 12_
+
+-- 12_Devuelve un listado con el identificador de cliente, nombre y apellidos 
+    -- y el número total de pedidos que ha realizado cada uno de clientes durante el año 2017.
+
+select c.id, c.nombre, c.apellido1, c.apellido2, count(p.id) as numero_pedidos from cliente c
+    left join pedido p on c.id = p.id_cliente and p.fecha between '2017-01-01' and '2017-12-31'   
+    group by c.id, c.nombre, c.apellido1, c.apellido2
+
+select c.id,c.nombre,c.apellido1,c.apellido2,count(p.id) from cliente c 
+    join pedido p  on c.id =p.id_cliente 
+    and p.fecha like '%2017%'
+    group by c.id,c.nombre,c.apellido1,c.apellido2
 
 -- 13_
 
