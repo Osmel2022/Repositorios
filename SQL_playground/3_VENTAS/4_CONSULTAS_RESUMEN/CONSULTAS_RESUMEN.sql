@@ -38,16 +38,21 @@ select c.id, c.nombre, c.apellido1, c.apellido2, p.fecha, max(p.total) as max_to
     group by c.id, c.nombre, c.apellido1, c.apellido2, p.fecha
     order by c.id, p.fecha
 
-
 -- 10_Calcula el máximo valor de los pedidos realizados para cada uno de los comerciales durante la fecha 2016-08-17. 
     -- Muestra el identificador del comercial, nombre, apellidos y total.
 select c.id, c.nombre,c.apellido1,max(total) from comercial c
-join pedido p on c.id = p.id_comercial
-where fecha = '2016-08-17'
-group by c.id, c.nombre,c.apellido1
+    join pedido p on c.id = p.id_comercial
+    where fecha = '2016-08-17'
+    group by c.id, c.nombre,c.apellido1
                         
--- 11_
+-- 11_Devuelve un listado con el identificador de cliente, nombre y apellidos y el número total de pedidos que ha realizado cada uno de clientes. 
+    -- Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido. Estos clientes también deben aparecer en el listado indicando que el número de pedidos realizados es 0.
 
+select c.id, c.nombre, c.apellido1, c.apellido2, count(p.id) as numero_pedidos from cliente c
+    left join pedido p on c.id = p.id_cliente   
+    group by c.id, c.nombre, c.apellido1, c.apellido2
+    order by c.id
+    
 -- 12_
 
 -- 13_
