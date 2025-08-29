@@ -70,6 +70,10 @@ select c.id,c.nombre,c.apellido1,c.apellido2,count(p.id) from cliente c
 select c.id,c.nombre,c.apellido1,c.apellido2,ifnull(max(p.total),0 )from cliente c 
     left join pedido p on c.id =p.id_cliente
     group by c.id,c.nombre,c.apellido1,c.apellido2
--- 14_
+
+-- 14_Devuelve cuál ha sido el pedido de máximo valor que se ha realizado cada año.
+select year(fecha)  , max(total)  from pedido
+    group by year(fecha)
+
 
 -- 15_
