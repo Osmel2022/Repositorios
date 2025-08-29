@@ -65,7 +65,8 @@ select c.id,c.nombre,c.apellido1,c.apellido2,count(p.id) from cliente c
     and p.fecha like '%2017%'
     group by c.id,c.nombre,c.apellido1,c.apellido2
 
--- 13_
+-- 13_Devuelve un listado que muestre el identificador de cliente, nombre, primer apellido y el valor de la máxima cantidad del pedido realizado por cada uno de los clientes
+    -- El resultado debe mostrar aquellos clientes que no han realizado ningún pedido indicando que la máxima cantidad de sus pedidos realizados es 0. Puede hacer uso de la función IFNULL.
 
 -- 14_
 
