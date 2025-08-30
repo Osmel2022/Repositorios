@@ -75,5 +75,7 @@ select c.id,c.nombre,c.apellido1,c.apellido2,ifnull(max(p.total),0 )from cliente
 select year(fecha)  , max(total)  from pedido
     group by year(fecha)
 
-
--- 15_
+-- 15_Devuelve el número total de pedidos que se han realizado cada año.
+select year(fecha), count(id) from pedido
+    group by year(fecha)
+    
