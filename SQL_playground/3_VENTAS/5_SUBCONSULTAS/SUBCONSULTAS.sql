@@ -5,7 +5,12 @@ select * from pedido
                         and apellido1 = 'Salas' 
                         and apellido2 = 'Díaz')
 
--- 2_
+-- 2_Devuelve el número de pedidos en los que ha participado el comercial Daniel Sáez Vega. (Sin utilizar INNER JOIN)
+select count(*) from pedido
+    where id_comercial = (select id from comercial 
+                            where nombre = 'Daniel' 
+                            and apellido1 = 'Sáez' 
+                            and apellido2 = 'Vega')
 
 -- 3_
 
