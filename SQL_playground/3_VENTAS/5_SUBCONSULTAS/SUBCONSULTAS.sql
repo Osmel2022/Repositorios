@@ -1,4 +1,9 @@
--- 1_
+-- 1_Devuelve un listado con todos los pedidos que ha realizado Adela Salas Díaz. (Sin utilizar INNER JOIN).
+select * from pedido
+    where id_cliente = (select id from cliente 
+                        where nombre = 'Adela' 
+                        and apellido1 = 'Salas' 
+                        and apellido2 = 'Díaz')
 
 -- 2_
 
