@@ -12,7 +12,8 @@ select count(*) from pedido
                             and apellido1 = 'Sáez' 
                             and apellido2 = 'Vega')
 
--- 3_
+-- 3_Devuelve los datos del cliente que realizó el pedido más caro en el año 2019. (Sin utilizar INNER JOIN)
+
 
 -- 4_
 
