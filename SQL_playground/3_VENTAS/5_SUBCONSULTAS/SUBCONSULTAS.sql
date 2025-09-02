@@ -13,7 +13,10 @@ select count(*) from pedido
                             and apellido2 = 'Vega')
 
 -- 3_Devuelve los datos del cliente que realizó el pedido más caro en el año 2019. (Sin utilizar INNER JOIN)
-
+select * from cliente
+    where id = (select id_cliente from pedido 
+                    where total = (select max(total) from pedido 
+                                    where fecha between '2019-01-01' and '2019-12-31'))
 
 -- 4_
 
