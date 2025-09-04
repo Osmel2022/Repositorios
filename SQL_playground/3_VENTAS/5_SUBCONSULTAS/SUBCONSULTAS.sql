@@ -26,7 +26,13 @@ select fecha, total from pedido
                                         and apellido1 = 'Ruiz' 
                                         and apellido2 = 'Santana'))
 
--- 5_
+-- 5_Devuelve un listado con los datos de los clientes y los pedidos, de todos los clientes que han realizado un pedido durante el año 2017
+    -- con un valor mayor o igual al valor medio de los pedidos realizados durante ese mismo año.
+select * from cliente c
+    join pedido p on c.id = p.id_cliente
+    where p.fecha between '2017-01-01' and '2017-12-31' 
+    and p.total >= (select avg(total) from pedido 
+                    where fecha between '2017-01-01' and '2017-12-31')
 
 -- 6_
 
