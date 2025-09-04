@@ -18,7 +18,13 @@ select * from cliente
                     where total = (select max(total) from pedido 
                                     where fecha between '2019-01-01' and '2019-12-31'))
 
--- 4_
+-- 4_Devuelve la fecha y la cantidad del pedido de menor valor realizado por el cliente Pepe Ruiz Santana.
+select fecha, total from pedido
+    where total = (select min(total) from pedido 
+                    where id_cliente = (select id from cliente 
+                                        where nombre = 'Pepe' 
+                                        and apellido1 = 'Ruiz' 
+                                        and apellido2 = 'Santana'))
 
 -- 5_
 
