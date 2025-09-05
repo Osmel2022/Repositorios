@@ -39,7 +39,9 @@ select * from pedido p1
     where not exists (select * from pedido p2 
                         where p2.total > p1.total)
 
--- 7_
+-- 7_Devuelve un listado de los clientes que no han realizado ningún pedido. (Utilizando ANY o ALL).
+select * from cliente 
+    where id <> all (select id_cliente from pedido )
 
 -- 8_
 
