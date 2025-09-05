@@ -34,7 +34,10 @@ select * from cliente c
     and p.total >= (select avg(total) from pedido 
                     where fecha between '2017-01-01' and '2017-12-31')
 
--- 6_
+-- 6_Devuelve el pedido más caro que existe en la tabla pedido si hacer uso de MAX, ORDER BY ni LIMIT.
+select * from pedido p1
+    where not exists (select * from pedido p2 
+                        where p2.total > p1.total)
 
 -- 7_
 
