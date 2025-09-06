@@ -43,6 +43,11 @@ select * from pedido p1
 select * from cliente 
     where id <> all (select id_cliente from pedido )
 
--- 8_
+-- 8_Devuelve un listado de los comerciales que no han realizado ningún pedido. (Utilizando ANY o ALL).
+select * from comercial 
+    where id <> all (select id_comercial from pedido )
 
--- 9_
+-- 9_Devuelve un listado de los clientes que no han realizado ningún pedido. (Utilizando IN o NOT IN).
+select * from cliente 
+    where id not in (select id_cliente from pedido )
+
