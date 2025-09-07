@@ -52,7 +52,15 @@ select * from cliente
     where id not in (select id_cliente from pedido )
 
 -- 10_Devuelve un listado de los comerciales que no han realizado ningún pedido. (Utilizando IN o NOT IN).
+select * from comercial 
+    where id <>(select id_comercial from pedido )
 
 -- 11_Devuelve un listado de los clientes que no han realizado ningún pedido. (Utilizando EXISTS o NOT EXISTS).
+select * from cliente c
+    where not exists (select * from pedido p 
+                        where p.id_cliente = c.id)
 
 -- 12_Devuelve un listado de los comerciales que no han realizado ningún pedido. (Utilizando EXISTS o NOT EXISTS).
+select * from comercial c
+    where not exists (select * from pedido p 
+                        where p.id_comercial = c.id)
