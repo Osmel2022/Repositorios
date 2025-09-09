@@ -9,8 +9,17 @@ select ciudad, telefono from oficina
 select nombre, apellido1, apellido2, email,codigo_jefe from empleado
     where codigo_jefe = 7;
 
--- 4_
+-- 4_Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.
+select puesto,nombre,apellido1,apellido2,email from empleado
+    where puesto ='Director General'
 
--- 5_
+-- 5_Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.
+select nombre, apellido1, apellido2, puesto from empleado
+    where puesto <> 'Representante de ventas'
 
--- 6_
+select nombre,apellido1,apellido2,puesto from empleado
+    where not puesto = 'Representante Ventas'
+
+-- 6_Devuelve un listado con el nombre de los todos los clientes españoles.
+select nombre from cliente
+    where pais = 'Spain' or pais = 'España';
