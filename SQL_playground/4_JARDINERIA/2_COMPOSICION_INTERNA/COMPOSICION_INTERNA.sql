@@ -30,3 +30,14 @@ select o.linea_direccion1,o.linea_direccion2,o.ciudad from oficina o
     join empleado e on o.codigo_oficina = e.codigo_oficina
     join cliente c on e.codigo_empleado = c.codigo_empleado_rep_ventas
     where c.ciudad ='Fuenlabrada'
+
+-- 7_Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
+select  nombre_cliente,nombre,apellido1,apellido2,o.ciudad from cliente c
+    join empleado e on c.codigo_empleado_rep_ventas = e.codigo_empleado
+    join oficina o on e.codigo_oficina = o.codigo_oficina
+
+-- 8_Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
+select e.nombre,e.apellido1,e.apellido2,ej.nombre as nombre_jefe,ej.apellido1,ej.apellido2 from empleado e
+    join empleado ej where e.codigo_jefe = ej.codigo_empleado
+
+-- 9_
