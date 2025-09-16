@@ -40,4 +40,8 @@ select  nombre_cliente,nombre,apellido1,apellido2,o.ciudad from cliente c
 select e.nombre,e.apellido1,e.apellido2,ej.nombre as nombre_jefe,ej.apellido1,ej.apellido2 from empleado e
     join empleado ej where e.codigo_jefe = ej.codigo_empleado
 
--- 9_
+-- 9_Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.
+
+-- 10_Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
+
+-- 11_Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
