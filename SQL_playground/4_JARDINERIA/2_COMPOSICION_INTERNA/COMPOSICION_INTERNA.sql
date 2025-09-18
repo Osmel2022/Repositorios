@@ -41,6 +41,9 @@ select e.nombre,e.apellido1,e.apellido2,ej.nombre as nombre_jefe,ej.apellido1,ej
     join empleado ej where e.codigo_jefe = ej.codigo_empleado
 
 -- 9_Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.
+select e.nombre,e.apellido1,e.apellido2,ej.nombre as nombre_jefe,ej.apellido1,ej.apellido2, ejj.nombre as nombre_jefe_jefe,ejj.apellido1,ejj.apellido2 from empleado e
+    join empleado ej on e.codigo_jefe = ej.codigo_empleado
+    join empleado ejj on ej.codigo_jefe = ejj.codigo_empleado
 
 -- 10_Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
 
