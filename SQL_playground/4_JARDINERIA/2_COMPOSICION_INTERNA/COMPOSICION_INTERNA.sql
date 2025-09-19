@@ -46,5 +46,8 @@ select e.nombre,e.apellido1,e.apellido2,ej.nombre as nombre_jefe,ej.apellido1,ej
     join empleado ejj on ej.codigo_jefe = ejj.codigo_empleado
 
 -- 10_Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
+select c.nombre_cliente,p.fecha_entrega,p.fecha_esperada from cliente c
+    join pedido p on c.codigo_cliente = p.codigo_cliente
+    where p.fecha_entrega > p.fecha_esperada 
 
 -- 11_Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
