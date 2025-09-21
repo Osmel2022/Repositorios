@@ -51,3 +51,8 @@ select c.nombre_cliente,p.fecha_entrega,p.fecha_esperada from cliente c
     where p.fecha_entrega > p.fecha_esperada 
 
 -- 11_Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
+select distinct gp.gama,c.nombre_cliente from cliente c 
+    join pedido p on c.codigo_cliente = p.codigo_cliente
+    join detalle_pedido dp on p.codigo_pedido = dp.codigo_pedido
+    join producto pp on dp.codigo_producto = pp.codigo_producto
+    join gama_producto gp on pp.gama = gp.gama
