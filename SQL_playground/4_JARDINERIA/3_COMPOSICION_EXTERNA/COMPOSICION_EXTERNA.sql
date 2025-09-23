@@ -1,8 +1,8 @@
--- 1_
+-- 1_Devuelve un listado con el código de oficina y la ciudad donde hay oficinas
 
--- 2_
+-- 2_Devuelve un listado que muestre solamente los clientes que no han realizado ningún pedido.
 
--- 3_
+-- 3_Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
 
 -- 4_
 
