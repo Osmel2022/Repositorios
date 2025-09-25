@@ -1,0 +1,4 @@
+https://sql-playground.com/#
+
+Este pequeño proyecto son consultas SQL de diferente complejidad,
+a partir de los ejerccios planteados en la web anteriormente mencionada.
