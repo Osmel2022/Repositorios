@@ -49,3 +49,15 @@ select nombre from fabricante f
 select nombre from fabricante f
     where f.id not in
         (select id_fabricante from producto)
+
+-- 13_Devuelve los nombres de los fabricantes que tienen productos asociados. (Utilizando EXISTS o NOT EXISTS).
+select nombre from fabricante f
+    where exists
+        (select 1 from producto p
+            where f.id= p.id_fabricante)
+
+-- 14_Devuelve los nombres de los fabricantes que no tienen productos asociados. (Utilizando EXISTS o NOT EXISTS).
+select nombre from fabricante f
+    where not exists
+        (select 1 from producto p
+            where f.id = p.id_fabricante)
