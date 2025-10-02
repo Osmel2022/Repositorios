@@ -61,3 +61,15 @@ select nombre from fabricante f
     where not exists
         (select 1 from producto p
             where f.id = p.id_fabricante)
+
+-- 15_Lista el nombre de cada fabricante con el nombre y el precio de su producto más caro.
+select  p.nombre as Producto, p.precio as Precio, f.nombre as Fabricante
+    from fabricante f
+    join producto p on f.id = p.id_fabricante 
+        where Precio =  (select max(precio)
+                            from producto where f.id = id_fabricante)
+
+-- 16_Devuelve un listado de todos los productos que tienen un precio mayor o igual a la media de todos los productos de su mismo fabricante.
+select * from producto p
+    where precio >=(select avg(precio) from producto p1 
+                    where p.id_fabricante = p1.id_fabricante)
