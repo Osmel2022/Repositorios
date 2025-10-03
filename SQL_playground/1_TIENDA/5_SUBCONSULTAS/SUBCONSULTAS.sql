@@ -73,3 +73,19 @@ select  p.nombre as Producto, p.precio as Precio, f.nombre as Fabricante
 select * from producto p
     where precio >=(select avg(precio) from producto p1 
                     where p.id_fabricante = p1.id_fabricante)
+
+-- 17_Lista el nombre del producto más caro del fabricante Lenovo.
+select nombre from producto 
+    where precio in (select max(precio) from producto  
+                            where id_fabricante =(select id from fabricante 
+                                                where nombre ='lenovo'))
+
+SELECT nombre 
+FROM producto
+WHERE id_fabricante = (
+    SELECT id
+    FROM fabricante
+    WHERE nombre = 'Lenovo'
+)
+ORDER BY precio DESC
+LIMIT 1;
