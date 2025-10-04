@@ -89,3 +89,16 @@ WHERE id_fabricante = (
 )
 ORDER BY precio DESC
 LIMIT 1;
+
+-- 18_Devuelve un listado con todos los nombres de los fabricantes que tienen el mismo número de productos que el fabricante Lenovo.
+select f.nombre ,p.cant 
+    from fabricante f
+    join    (select id_fabricante, count(*) as cant
+                from producto p 
+                group by id_fabricante) as p on f.id=p.id_fabricante     
+
+    where p.cant = (select count(*) 
+                    from producto p1 
+                    where p1.id_fabricante in (select id 
+                                                from fabricante 
+                                                where nombre='lenovo') )
